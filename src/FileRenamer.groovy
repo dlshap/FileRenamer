@@ -1,6 +1,7 @@
 class FileRenamer {
     static main(args) {
-        def dir = new File("S:\\Movies\\Playon Server\\TV\\Parts Unknown")
+        def REALRUN = true
+        def dir = new File("S:\\Movies\\Playon Server\\TV\\Anthony Bourdain - Parts Unknown")
         dir.eachFile {
             def path = it.getParent()
             def oldname = it.getName()
@@ -16,7 +17,8 @@ class FileRenamer {
                 if (matcher[0].size() == 2) {
                     newname = matcher[0][1]
                     println "$it .renameTo(${path + "\\" + newname})"
-                    it.renameTo("${path + "\\" + newname}")
+                    if (REALRUN)
+                        it.renameTo("${path + "\\" + newname}")
                 }
             }
         }
