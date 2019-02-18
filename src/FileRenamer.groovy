@@ -8,7 +8,7 @@ class FileRenamer {
     String path, oldname, newname
 
     def renameWithReplace() {
-        newname = oldname.replaceAll(/1957-60/,"1957-1959")
+        newname = oldname.replaceAll(/1957-60/, "1957-1959")
     }
 
     def renameWithRegex() {
@@ -17,8 +17,7 @@ class FileRenamer {
         def matcher = oldname =~ pat
         if (matcher.size() == 1) {
             if (matcher[0].size() >= 2) {
-//                    newname = "${matcher[0][1]}${sprintf("%02d",(matcher[0][2]).toInteger()+2)}- xxx .mp4"
-                newname = "${matcher[0][1]}${matcher[0][2]}${matcher[0][3]}.mp4"
+                newname = "${matcher[0][1]}${sprintf("%02d", (matcher[0][2]).toInteger() + 2)}- xxx .mp4"
             }
         }
     }
