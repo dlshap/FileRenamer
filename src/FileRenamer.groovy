@@ -1,23 +1,24 @@
 class FileRenamer {
 
-    def REALRUN = false
+    Boolean REALRUN = false
 
-    def REPLACE = false
+    Boolean REPLACE = false
 
-    def pathName = "D:\\PLEX Home Videos\\1996"
+    def pathName = "D:\\PLEX Home Videos\\Silent Home Movies\\70s"
 
     String path, oldname, newname
 
     def renameWithReplace() {
-        newname = oldname.replaceAll(/93-/, "94-")
+        newname = oldname.replaceAll(/75 /, "70s-")
     }
 
     def renameWithRegex() {
-        def pat = /(96-).*_(\d*).*?.mp4/
+        def pat = /(.*?) (\d\d).MP4/
         def matcher = oldname =~ pat
         if (matcher.size() == 1) {
             if (matcher[0].size() >= 2) {
-                newname = "${matcher[0][1]}x${(sprintf("%02d", (matcher[0][2]).toInteger() + 1))}yyy .mp4"
+                newname = "${matcher[0][1]}${(sprintf("%02d", (matcher[0][2]).toInteger() + 1))}xxx .mp4"
+//                newname = "${matcher[0][2]} ${matcher[0][1]}.mp4"
             }
         }
     }
