@@ -10,7 +10,7 @@ class FileLister {
 
     def start() {
 
-        def startDir = "D:\\My Videos"
+        def startDir = "\\This PC\\David's iPhone\\"
 
         println "Starting at: $startDir"
         File fileDir = new File(startDir)
