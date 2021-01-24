@@ -2,7 +2,7 @@ import groovy.io.FileType
 
 class FileRenamer {
 
-    Boolean REALRUN = false
+    Boolean REALRUN = true
 
     Boolean REPLACE = false
 
@@ -19,11 +19,10 @@ class FileRenamer {
     }
 
     def start() {
-        def topDir = new File(pathName)
-        renameFiles(topDir)
+        renameFiles(pathName)
     }
 
-    def renameFiles(subpath) {
+    def renameFiles(String subpath) {
         println "${subpath}:\n\r"
         def dir = new File(subpath)
         dir.eachFile {
