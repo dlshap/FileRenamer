@@ -52,14 +52,14 @@ class FileRenamer {
 //        def monthNames = ["jan": "01", "feb": "02", "mar": "03", "apr": "04", "may": "05", "jun": "06",
 //                          "jul": "07", "aug": "08", "sep": "09", "oct": "10", "nov": "11", "dec": "12"]
 
-        def pat = /(\d\d-Pro Level 6-)(\d{1,2})(.mp3)/
+        def pat = /(\d\d-Pro Level 6-)(\d{1,2}x) - Copy(.mp3)/
 
         def matcher = oldname =~ pat
         if (matcher.size() == 1) {
             if (matcher[0].size() >= 2) {
 //                def monthNum = monthNames[((matcher[0][3]).toString().toLowerCase())]
 //                newname = "${matcher[0][1]}${monthNum}${matcher[0][2]}${matcher[0][4]}"
-                newname = "${matcher[0][1]}${matcher[0][2]}x${matcher[0][3]}"
+                newname = "${matcher[0][1]}${matcher[0][2]}${matcher[0][3]}"
             }
         }
     }
